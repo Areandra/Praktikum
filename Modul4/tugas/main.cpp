@@ -153,19 +153,17 @@ void quickSort(int arr[],int n, int low, int high) {
             // menampilkan pesan bahwa index saling melewati
             else cout << "\nIndex Saling Melewati [ NEXT ]";
         }
-        // menampilkan pesan bahwa iterasi berlanjut
-        cout << "\n\nIterasi Selanjutnya [ ";
         // jika index terkecil lebih kecil dari j
         if (low < j) {
-            // menampilkan posisi rekursi   
-            cout << "Sebelah Kiri Pivot Sebelumnya ] :";
+            // menampilkan pesan bahwa proses berlanjut dan posisi rekursi   
+            cout << "\n\nIterasi Selanjutnya [ " << "Sebelah Kiri Pivot Sebelumnya ] :";
             // Rekursi untuk mengurutkan subarray di sebelah kiri pivot sebelumnya
             quickSort(arr, n, low, j);
         }
         // jika index terkecil lebih kecil dari high
         if (i < high) {
-            // Menampilkan Posisi Rekursi
-            cout << "Sebelah Kanan Pivot Sebelumnya ] :";
+            // menampilkan pesan bahwa proses berlanjut dan posisi rekursi   
+            cout << "\n\nIterasi Selanjutnya [ " << "Sebelah Kanan Pivot Sebelumnya ] :";
             // Rekursi untuk mengurutkan subarray di sebelah kanan pivot sebelumnya
             quickSort(arr, n, i, high);
         }
