@@ -169,7 +169,6 @@ void quickSort(int arr[],int n, int low, int high) {
             // Rekursi untuk mengurutkan subarray di sebelah kanan pivot sebelumnya
             quickSort(arr, n, i, high);
         }
-
     }
 }
 
