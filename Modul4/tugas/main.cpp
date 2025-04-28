@@ -29,7 +29,8 @@ void bubbleSort(int arr[], int n) {
         // pengulangan untuk membandingkan elemen dalam array dari awal hingga 1 - pos terakhir pada pengulangan sebelumnya
         for (int j = 0; j < n - i - 1; j++) {
             // menampilkan posisi proses
-            cout << "Proses - " << j+1 << ": " << isiArray(arr, n) << "\nMembandingan Elemen Pada index ( [" << j << "] = " << arr[j] << " & " << "[" << j+1 << "] = " << arr[j+1] << " )" << " : ";
+            cout << "Proses - " << j+1 << ": " << isiArray(arr, n) << "\nMembandingan Elemen Pada index ( [" << j << "] = " 
+                 << arr[j] << " & " << "[" << j+1 << "] = " << arr[j+1] << " )" << " : ";
 
             // jika elemen saat ini lebih besar dari elemen berikutnya
             if (arr[j] > arr[j + 1]) {
@@ -39,7 +40,8 @@ void bubbleSort(int arr[], int n) {
                 tukar = true;
             }
             // menampilkan isi array sebelum iterasi selesai
-            cout << "\n[" << (tukar ? "Terjadi Pertukaran" : "Tidak Terjadi Pertukaran") << "] Elemen Dalam Array: " << isiArray(arr, n) << endl;
+            cout << "\n[" << (tukar ? "Terjadi Pertukaran" : "Tidak Terjadi Pertukaran") << "] Elemen Dalam Array: " 
+                 << isiArray(arr, n) << endl;
             // reset flag tukar
             tukar = false;
         }
@@ -61,7 +63,8 @@ void selectionSort(int arr[], int n) {
             pindah = false;
             // menampilkan posisi proses
             cout << "Proses - " << j << ": "
-                 << "\nMembandingan Elemen Pada index ( [" << pos << "] = " << arr[pos] << " & " << "[" << j << "] = " << arr[j] << " )" << " : ";
+                 << "\nMembandingan Elemen Pada index ( [" << pos << "] = " << arr[pos] << " & " << "[" << j << "] = " 
+                 << arr[j] << " )" << " : ";
             // jika elemen saat ini lebih kecil dari elemen terkecil
             if (arr[j] < arr[pos]) {
                 // maka simpan posisi elemen terkecil
@@ -101,9 +104,9 @@ void quickSort(int arr[],int n, int low, int high) {
         // pengulangan untuk mengulang putaran pengurutan selama index terkecil lebih kecil atau sama dengan index terbesar
         while (i <= j) {
         // menampilkan posisi proses
-            cout << "\nProses - " << proses++;
+            cout << "\nProses - " << proses++
             // menampilkan posisi pencarian berdasarkan sisi
-            cout << "\nElemen Disisi Kiri Start [" << i << "] :\nMencari Elemen Yang Lebih Besar Dari Pivot :";
+                 << "\nElemen Disisi Kiri Start [" << i << "] :\nMencari Elemen Yang Lebih Besar Dari Pivot :";
             // perulangan yang menaikan index iterasi yang ada di kiri untuk mencari elemen yang lebih besar dari pivot
             while (arr[i] < pivot) {
             // menampilkan pos pencarian
@@ -112,10 +115,10 @@ void quickSort(int arr[],int n, int low, int high) {
                 i++;
             }
             // menampilkan posisi elemen di temukan
-            cout << "\nPosisi Elemen Di Temukan : [" << i << "] = " << arr[i];
+            cout << "\nPosisi Elemen Di Temukan : [" << i << "] = " << arr[i]
 
             //menampilkan posisi pencarian berdasarkan sisi
-            cout << "\nElemen Disisi Kanan Start [" << j << "] :\nMencari Elemen Yang Lebih Kecil Dari Pivot :";
+                 << "\nElemen Disisi Kanan Start [" << j << "] :\nMencari Elemen Yang Lebih Kecil Dari Pivot :";
             // perulangan yang menurunkan index iterasi yang ada di kanan untuk mencari elemen yang lebih kecil dari pivot, 
             while (arr[j] > pivot) {
                 // menampilkan pos pencarian
@@ -143,7 +146,8 @@ void quickSort(int arr[],int n, int low, int high) {
                     tukar = true;
                 }
                 // tampilkan pesan pertukaran elemen
-                cout << (tukar ? "\nTukar Elemen Yang Telah Ditemukan Yang Berada Dikiri [" + to_string(i) + "] " + "dan Kanan [" + to_string(j) + "] " : "\nTidak Terjadi Pertukaran") << "\nElemen Array " << (tukar ? "Setelah Ditukar : " : ": ")  << isiArray(arr, n);
+                cout << (tukar ? "\nTukar Elemen Yang Telah Ditemukan Yang Berada Dikiri [" + to_string(i) + "] " + "dan Kanan [" + to_string(j) 
+                        + "] " : "\nTidak Terjadi Pertukaran") << "\nElemen Array " << (tukar ? "Setelah Ditukar : " : ": ")  << isiArray(arr, n);
                 // lalu naikankan index i dan turunkan index j untuk untuk membatasi area iterasi pada setiap sisi pivot, 
                 // yaitu 1 posisi setelah posisi pertukaran (i) dan 1 posisi sebelum posisi pertukaran (j)
                 i++; j--;
@@ -169,16 +173,6 @@ void quickSort(int arr[],int n, int low, int high) {
         }
     }
 }
-
-// fungsi untuk menyimpan array ke dalam array lain
-void saveArray(int arr[], int arr2[], int n) {
-    // pengulangan untuk menyimpan array ke dalam array lain
-    for (int i = 0; i < n; i++) {
-        // menyimpan elemen array ke dalam array lain
-        arr2[i] = arr[i];
-    }
-}
-
 // deklarasi fungsi untuk meminta input elemen array dengan parameter data array dan panjang array
 void inputArray(int arr[], int arr2[], int n) {
     // pengulangan untuk input elemen array
@@ -188,32 +182,46 @@ void inputArray(int arr[], int arr2[], int n) {
         //  menginput elemen array
         cin >> arr[i];
     }
-    saveArray(arr, arr2, n);
+    // pengulangan untuk menyimpan array ke dalam array lain
+    for (int i = 0; i < n; i++) {
+        // menyimpan elemen array ke dalam array lain
+        arr2[i] = arr[i];
+    }
 }
+// / fungsi untuk mengurutkan array dengan algoritma yang berbeda
+void sort(string sort, int arr[], int arr2[], int n) {
+    // bersihkan layar
+    system("cls");
+    // menampilkan isi array sebelum diurutkan
+    cout << "Array Sebelum Diurutkan: " << isiArray(arr, n) << endl;
 
-
-void resetArray(int arr[], int arr2[], int n) {
-    // pengulangan untuk mengisi array dengan array yang sudah disimpan
+    // memanggil fungsi bubbleSort unuk mengurutkan array
+    if (sort == "Bubble Sort") {
+        bubbleSort(arr, n);
+    } else if (sort == "Selection Sort") {
+        selectionSort(arr, n);
+    } else if (sort == "Quick Sort") {
+        quickSort(arr, n, 0, n - 1);
+    } else {
+        cout << "Algoritma tidak dikenali!" << endl;
+        return;
+    }
+    //menampilkan isi array setelah diurutkan
+    cout << "\n\nArray setelah diurutkan dengan " << sort << ": " << isiArray(arr, n) << endl
+    // menampilkan pesan untuk meminta input untuk melanjutkan
+         << "\nTekan Enter untuk melanjutkan...";
+    // pause sistem
+    cin.ignore();
+    cin.get();
+    cin.ignore();
+    // bersihkan layar
+    
+    // pengulangan untuk mengisi array dengan array yang sudah disimpan (resetArray)
     for (int i = 0; i < n; i++) {
         // mengisi elemen array dengan array yang sudah disimpan
         arr[i] = arr2[i];
     }
 }
-
-
-void pause(string pesan, int arr[], int arr2[], int n) {
-    // menampilkan pesan untuk meminta input untuk melanjutkan
-    cout << pesan;
-    // pause sistem
-    cin.ignore();
-    cin.get();
-    // bersihkan layar
-    system("cls");
-    
-    // reset array untuk menghindari kesalahan data pada array yang sudah diurutkan
-    resetArray(arr, arr2, n);
-}
-
 // / fungsi utama
 int main() {
     // deklarasi panjang array
@@ -224,47 +232,17 @@ int main() {
     // meminta input panjang array
     cin >> n;
 
-    
     // deklarasi array yang akan diurutkan
     int arr[n];
     int saveArr[n];
 
-    
     // meminta input elemen array
     inputArray(arr, saveArr, n);
     
-    // bersihkan layar
-    system("cls");
-
-    // menampilkan isi array sebelum diurutkan
-    cout << "Array Sebelum Diurutkan: " << isiArray(arr, n) << endl;
-
-    // memanggil fungsi bubbleSort unuk mengurutkan array
-    bubbleSort(arr, n);
-    //menampilkan isi array setelah diurutkan
-    cout << "\n\nArray setelah diurutkan dengan Bubble Sort: " << isiArray(arr, n) << endl;
-
-    // memanggil fungsi pause
-    pause("\nTekan Enter untuk melanjutkan...", arr, saveArr, n);
-
-    // menampilkan isi array sebelum diurutkan
-    cout << "Array sebelum diurutkan: " << isiArray(arr, n) << endl;
-
-    // memanggil fungsi selectionSort untuk mengurutkan array
-    selectionSort(arr, n);
-    //menampilkan isi array setelah diurutkan
-    cout << "\n\nArray setelah diurutkan dengan Selection Sort: " << isiArray(arr, n) << endl;
-
-    // memanggil fungsi pause
-    pause("\nTekan Enter untuk melanjutkan...", arr, saveArr, n);
-
-    // menampilkan isi array sebelum diurutkan
-    cout << "Array sebelum diurutkan: " << isiArray(arr, n) << endl;
-
-    // memanggil fungsi quickSort untuk mengurutkan array
-    quickSort(arr, n, 0, n - 1);
-    //menampilkan isi array setelah diurutkan
-    cout << "\n\nArray setelah diurutkan dengan Quick Sort: " << isiArray(arr, n) << endl;
+    // memanggil semua fungsi pengurutan
+    sort("Bubble Sort", arr, saveArr, n);
+    sort("Selection Sort", arr, saveArr, n);
+    sort("Quick Sort", arr, saveArr, n);
 
     // program selesai
     return 0;
