@@ -58,20 +58,23 @@ public:
 };
 
 int main() {
+    cout << "Nama : Muh. Ariel\nNim : F55124049\n";
+    
     Queue q;
-    q.enqueue(6);
-    q.enqueue(5);
-    q.enqueue(5);
-    q.enqueue(1);
-    q.enqueue(2);
-    q.enqueue(0);
-    q.enqueue(0);
-    q.enqueue(2);
-    q.enqueue(5);
-    q.enqueue(6);
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.enqueue(40);
+    q.enqueue(50);
+    q.enqueue(60);
+    q.enqueue(70);
+    q.enqueue(80);
+    q.enqueue(90);
+    q.enqueue(100);
 
     q.display();
 
+    q.dequeue();
     q.dequeue();
     q.dequeue();
     q.dequeue();

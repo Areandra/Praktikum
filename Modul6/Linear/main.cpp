@@ -1,5 +1,5 @@
 #include <iostream>
-#define SIZE 9
+#define SIZE 5
 
 using namespace std;
 
@@ -59,31 +59,22 @@ public:
 };
 
 int main() {
+    cout << "Nama : Muh. Ariel\nNim : F55124049\n";
+
     Queue q;
-    q.enqueue(6);
-    q.enqueue(5);
-    q.enqueue(5);
-    q.enqueue(1);
-    q.enqueue(2);
-    q.enqueue(0);
-    q.enqueue(0);
-    q.enqueue(2);
-    q.enqueue(5);
-    q.enqueue(6);  
-    
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.enqueue(40);
+    q.enqueue(50);
     q.display();
     
     q.dequeue();
     q.dequeue();
-    q.dequeue();
-    q.dequeue();
-    q.dequeue();
-    q.dequeue();
-    q.dequeue();
-    q.dequeue();
-    q.dequeue();
-    
     q.display();
     
+    q.enqueue(60);
+    q.display();
+
     return 0;
 }
